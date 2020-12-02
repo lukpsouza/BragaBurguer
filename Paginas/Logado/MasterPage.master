@@ -1,0 +1,101 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="MasterPage.master.cs" Inherits="Paginas_Logado_MasterPage" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+    <link href="../../Content/bootstrap.min.css" rel="stylesheet" />
+    <link href="../../Content/DataTables/css/jquery.dataTables.min.css" rel="stylesheet" />
+    <link href="../../Content/DataTables/css/dataTables.bootstrap.min.css" rel="stylesheet" />
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <asp:HyperLink class="navbar-brand" ID="HyperLink1" runat="server" NavigateUrl="~/Paginas/Logado/Default.aspx">Braga's Burguer</asp:HyperLink>
+
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="#">
+                            <asp:Label ID="lblNome" runat="server"></asp:Label></a>
+                    </li>
+                    <li class="nav-item">
+                        <asp:LinkButton ID="btnSair" runat="server" CssClass="nav-link" OnClick="btnSair_Click" Text="SAIR"></asp:LinkButton>
+                    </li>
+                    <%--   <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Dropdown
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="#">Action</a>
+                            <a class="dropdown-item" href="#">Another action</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="#">Something else here</a>
+                        </div>
+                    </li>--%>
+                <div class="dropdown show">
+                <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Opções
+                     </a>
+                <div class="dropdown-menu bg-dark" aria-labelledby="dropdownMenuLink">
+                <a class="nav-link" href="CadastrarUsuario.aspx">Cadastrar Usuário</a>
+                <a class="nav-link" href="UsuariosEdit.aspx">Listar usuários</a>
+                <a class="nav-link" href="CadastrarPedidos.aspx">Cadastrar Pedidos</a>
+                <a class="nav-link" href="Pedidos.aspx">Listar Pedidos</a>
+                <a class="nav-link" href="CadastrarProdutos.aspx">Cadastrar Produtos</a>
+                <a class="nav-link" href="Produtos.aspx">Listar Produtos</a>
+                <a class="nav-link" href="CadastrarClientes.aspx">Cadastrar Cliente</a>
+                <a class="nav-link" href="Clientes.aspx">Listar Clientes</a>
+                <a class="nav-link" href="CadastrarItens.aspx">Cadastrar Itens</a>
+                <a class="nav-link" href="ItensPedido.aspx">Litar Itens</a>
+                </div>
+                </div>
+                    </ul>
+
+                <%-- <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>--%>
+            </div>
+        </nav>
+
+        <div>
+            <asp:ContentPlaceHolder ID="body" runat="server">
+                <p>
+                    &nbsp;</p>
+                <p>
+                    &nbsp;</p>
+            </asp:ContentPlaceHolder>
+        </div>
+
+
+    <script src="../../Scripts/jquery-3.0.0.min.js"></script>
+    <script src="../../Scripts/bootstrap.min.js"></script>
+    <script src="../../Scripts/DataTables/jquery.dataTables.min.js"></script>
+    
+    <script>    
+       $(document).ready(function() {
+        $('.tabela').dataTable( {
+            "language": {
+                "url": "dataTables.german.lang"
+            }
+        } );
+    } );
+    </script>
+
+
+        <p>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            
+        </p>
+    </form>
+
+
+    </body>
+</html>
